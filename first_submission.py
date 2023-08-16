@@ -6,13 +6,15 @@ FIRST SUBMISSION
 This file will use a simple neural network that is scaled to predict the C02 Emissions of 
 places and times in Rwanda
 
+
+
+
 """
 
 #%%
 #NECESSARY IMPORTS
 
 import pandas as pd
-from sklearn.metrics import mean_squared_error
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
