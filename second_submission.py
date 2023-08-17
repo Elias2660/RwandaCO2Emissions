@@ -27,7 +27,7 @@ from sklearn.neighbors import KNeighborsRegressor
 import utils
 
 # %%
-"""Getting the DATG"""
+"""Getting the DATA"""
 
 PATH = "playground-series-s3e20"
 train, test, y = utils.getData(PATH)
@@ -40,10 +40,41 @@ display(test.head())
 print("y")
 display(y.head())
 
+# %%
+"""DATA SCALING
+
+We're going to use the same scaling method as before.
+I don't know if this type of scaling is best, but I'm still going to do it
+"""
+
+print(f"Greatest number of null values: {train.isnull().sum().max()}")
+cols_with_greatest_null = train.columns.where(train.isnull().sum() == train.isnull().sum().max()).to_numpy().reshape((1, 75))
+print(f"Column with the greatest number of null values: {cols_with_greatest_null[cols_with_greatest_null != np.array(None)]}")
+
+
+scaled_train, scaled_test = utils.Znormalize(train, test)
+scaled_y = (y - y.mean())/y.std()
+
+
+print("Scaled Training Dataset:")
+display(scaled_train)
+
+print("Scaled Testing Dataset:")
+display(scaled_test)
+
+print("Scaled y:")
+display(scaled_y)
 
 # %%
 """
 DATA Imputation
 I'm going to imput data first, so it's easier to choose 
 between the different columns
+
+We're going to do the same thing as before, using the same function
 """
+
+filled_train, filled_test = utils.predictMissingValues(scaled_train, scaled_test)
+
+
+# %%

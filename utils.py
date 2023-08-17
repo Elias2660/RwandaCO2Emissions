@@ -41,7 +41,6 @@ def Znormalize(train, test):
     new_train = train.copy()
     new_test = test.copy()
     for column in trainplustest.columns:
-        print(column)
         if type(trainplustest[column][1]) != str:
             col_mean = trainplustest[column].mean(numeric_only = False)
             col_std = trainplustest[column].std()
