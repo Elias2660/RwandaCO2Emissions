@@ -1,3 +1,4 @@
 .DS_Store
 playground-series-s3e20
 venv
+__pycache__
