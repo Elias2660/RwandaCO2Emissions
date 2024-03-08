@@ -52,7 +52,7 @@ tensorflow-macos==2.15.0
 termcolor==2.4.0
 threadpoolctl==3.2.0
 typing_extensions==4.10.0
-tzdata==2023.4
+tzdata==2024.1
 urllib3==2.2.1
 Werkzeug==3.0.1
 wrapt==1.16.0
