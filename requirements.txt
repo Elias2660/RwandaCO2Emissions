@@ -27,7 +27,7 @@ ml-dtypes==0.3.2
 numpy==1.26.4
 oauthlib==3.2.2
 opt-einsum==3.3.0
-packaging==23.2
+packaging==24.0
 pandas==2.2.1
 pillow==10.2.0
 protobuf==4.25.3
